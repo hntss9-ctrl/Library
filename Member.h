@@ -111,9 +111,32 @@ public:
 
 
     void registerMember() override
-    {
-        cout << "Member registered successfully: " << memberID << endl;
+{
+    cout << "\n=== MEMBER REGISTRATION ===\n";
+
+    // Nhập email & password
+    cout << "Enter Email: ";
+    getline(cin, email);
+
+    cout << "Enter Password: ";
+    getline(cin, password);
+
+    if (email.empty() || password.empty()) {
+        cout << "[ERROR] Email and password cannot be empty!\n";
+        return;
     }
+
+    // Nhập thêm thông tin khác
+    cout << "Enter Name: ";
+    getline(cin, name);
+
+    cout << "Enter Phone Number: ";
+    getline(cin, phoneNumber);
+
+    cout << "\n[SUCCESS] Registration completed!\n";
+    cout << "You can now log in with your Email and Password.\n";
+}
+
 
     // -------------------------------------------------
     // Member class specific methods
@@ -179,3 +202,4 @@ public:
     }
     vector<Borrow>& getBorrowingHistory() { return borrowingHistory; }
 };
+
